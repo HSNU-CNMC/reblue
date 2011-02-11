@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title><?php bloginfo('name') ?></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>" type="text/css" />
+		<script type='text/javascript' src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	</head>
+	<body>
+		<div id="wapper">
+			<div id="header" class="clear">
+				<h1 id="title" class="clear"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="link"><?php bloginfo('name') ?></a></h1>
+				<h2 id="subtitle" class="clear"><?php bloginfo('description') ?></h2>
+				<ul id="menu" class="clear">
+					<?php wp_list_pages('title_li=');?>
+					<script type='text/javascript'>
+//<![CDATA[
+							$(".children").hide();
+							$("#menu > li").hover(
+							  function () {
+									$(this).children("ul").slideDown();
+								}, 
+							  function () {
+									$(this).children("ul").hide();
+								}
+							);
+//]]>
+					</script>
+				</ul><!--menu-->
+				<p id="menu-bg">&nbsp;</p>
+			</div><!--header-->
+			<div class="content-box clear" >
+				<div class="content">
+					<h3><?php the_title();?></h3>
+					<div id="content-line">
+						<p>&nbsp;</p>
+						<p></p>
+					</div>
+					<?php
+						the_content('Read the rest of this entry &raquo;');
+						get_template_part( 'loop', 'index' );
+?>
+				</div><!--content-->
+			</div><!--content-box-->
+			<div id="line" class="clear">
+				<p>&nbsp;</p>
+			</div>
+			<div id="footer">
+				<div class="clear">
+					<p>校址：10658 台北市大安區信義路三段143號</p>
+					<p>總機：(02) 2707-5215</p>
+					<p>管理員信箱: <a href="mailto:<?php bloginfo('admin_email')?>"><?php bloginfo('admin_email')?></a></p>
+					<p>© 2010 國立臺灣師範大學附屬高級中學</p>
+				</div>
+			</div><!--footer-->
+		</div><!--wapper-->
+	</body>
+</html>
