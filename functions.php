@@ -3,7 +3,6 @@
 define('BACKUP_OPTIONS', true);
 define('THEMENAME', 'Reblue'); //Should be cleaned up later
 define('VPRO', true); //Should be cleaned up later
-include_once('theme-options.php');
 include_once('config/config_options.php');
 include_once('config/config_features.php');
 include_once('config/options.class.php');
@@ -122,8 +121,6 @@ function register_my_menus() {
 }
 
 add_action( 'init', 'register_my_menus' );
-
-add_action('admin_menu' , 'rb_add_admin'); 
 
 function admin_widgets() {
 	register_sidebar( array(
