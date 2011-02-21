@@ -1,8 +1,7 @@
 <?php
-// Whether to save previous options, may slow things down
-define('BACKUP_OPTIONS', true);
-define('THEMENAME', 'Reblue'); //Should be cleaned up later
-define('VPRO', true); //Should be cleaned up later
+define('THEMENAME', 'Reblue');
+// All files in config/ folder came from the Eco theme (by Pagelines) , with modifications in order to work properly with Reblue
+// Some of them haven't been completely reviewed.
 include_once('config/config_options.php');
 include_once('config/config_features.php');
 include_once('config/options.class.php');
