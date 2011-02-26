@@ -26,7 +26,7 @@
 		function()
 		{
 			jQuery.post(
-"<?php bloginfo('wpurl'); ?>/wp-admin/admin-ajax.php",
+				"./wp-admin/admin-ajax.php",
 			{
 				'action': 'rb_getslides',
 			},

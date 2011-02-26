@@ -36,7 +36,7 @@ Version: 1.0
 }
 body {
 	font-size: 14px;
-	font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	font-family: "Bitstream Vera Sans", "DejaVu Sans", Tahoma, "Microsoft JhengHei", "LiHei Pro", "文泉驛微米黑", "Droid Sans Fallback", "AR PL UMing TW", "新細明體", sans-serif;
 	background: url(./img/dot2.png) transparent repeat;
 }
 h1 {
