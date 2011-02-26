@@ -32,13 +32,20 @@
 			},
 			function(response){
 				response = response.replace(/-1$/g,'');
-				//alert(response);
+				response = response.replace(/1$/g,'');
+				response = response.replace(/0$/g,'');
+				alert(response);
 				var slides = eval('(' + response + ')');
-				var count = 0;
-				for(i in slides.URL)
+				for(i in slides)
 				{
-					count++;
-					$('#slides').append("<img width='970' src='"+ slides.URL[i] + "'/>");
+					//alert(slides[i].image);
+					var sid = "fg-fs" + i;
+					$('#slides').append("<div id='fg-fs" + i + "'><img width='970' src='" + slides[i].image + "'/></div>");
+					if(slides[i].textboxwidth != "")
+					{
+						var sh =  $('#' + sid + '> img').height() - 30;
+						$('#' + sid).append("<div class='fg-fs' style='width:" + slides[i].textboxwidth  + "px; height:" + sh +"px'>" + slides[i].text + "</div>");
+					}
 					$('#slides img').load();
 				}
 				var $j = jQuery.noConflict();
@@ -87,9 +94,11 @@
 					});
 					<?php endif;?>
 				});
-			}
+			},
+							"text"
 			);
 		});
+		//]]>
 		</script>
 		<style type="text/css">
 		.fc-text {

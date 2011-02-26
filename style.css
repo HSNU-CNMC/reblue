@@ -69,7 +69,7 @@ address
 /* Wrapper
  * ========================================== */
 #wrapper {
-	width: 972px;
+	width: 970px;
 	margin: 0 auto;
 	background-color: #fff;
 	border: 0 solid #aaa;
@@ -312,11 +312,24 @@ ul.fg-menu li:active {
 /* Featured
  * ========================================== */
 #slides {
-	height: 400px;
+	height: 390px;
 }
 #slides p {
 	position: absolute;
 	z-index: 2;
+}
+.fg-fs {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.5);
+	-ms-filter:alpha(opacity=50);
+	filter:alpha(opacity=50);
+	color: #fff;
+	//width: 300px;
+	height: 100%;
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	padding: 15px;
 }
 /* Featured-pager
  * ===================== */
