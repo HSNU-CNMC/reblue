@@ -12,7 +12,7 @@ function ajax_slide()
 	// for front-end javascript to handle. So I added JSON_FORCE_OBJECT to make 
 	// json_encode always return an object.
 	// http://tw2.php.net/manual/en/function.json-encode.php
-	echo stripslashes(json_encode(pagelines('features'), JSON_FORCE_OBJECT));	
+	echo json_encode(pagelines('features'), JSON_FORCE_OBJECT);
 }
 
 ?>

@@ -34,8 +34,7 @@
 				response = response.replace(/-1$/g,'');
 				response = response.replace(/1$/g,'');
 				response = response.replace(/0$/g,'');
-				alert(response);
-				var slides = eval('(' + response + ')');
+				var slides = jQuery.parseJSON(response);
 				for(i in slides)
 				{
 					//alert(slides[i].image);
