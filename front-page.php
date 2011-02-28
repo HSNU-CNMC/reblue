@@ -31,19 +31,21 @@
 				'action': 'rb_getslides',
 			},
 			function(response){
-				response = response.replace(/-1$/g,'');
-				response = response.replace(/1$/g,'');
-				response = response.replace(/0$/g,'');
+				response = response.replace(/-1$/g, '');
+				response = response.replace(/1$/g, '');
+				response = response.replace(/0$/g, '');
 				var slides = jQuery.parseJSON(response);
 				for(i in slides)
 				{
-					//alert(slides[i].image);
 					var sid = "fg-fs" + i;
 					$('#slides').append("<div id='fg-fs" + i + "'><img width='970' src='" + slides[i].image + "'/></div>");
 					if(slides[i].textboxwidth != "")
 					{
-						var sh =  $('#' + sid + '> img').height() - 30;
-						$('#' + sid).append("<div class='fg-fs' style='width:" + slides[i].textboxwidth  + "px; height:" + sh +"px'>" + slides[i].text + "</div>");
+						//chrome cause some problem with getting height
+						//used haed-code to avoide temporarily.
+						//var sh = $('div#' + sid ).children('img').css('height');
+						var sh = 358;
+						$('#' + sid ).append("<div class='fg-fs' style='width:" + slides[i].textboxwidth  + "px; height:" + sh +"px'>" + slides[i].text + "</div>");
 					}
 					$('#slides img').load();
 				}
@@ -79,7 +81,7 @@
 						<?php endforeach;?>
 					});
 					<?php endif;?>
-					
+					/*
 					<?php if(pagelines('feature_playpause')):?>	
 					// Play Pause
 					$j('.playpause').click(function() { 
@@ -92,10 +94,9 @@
 						}
 					});
 					<?php endif;?>
+					*/
 				});
-			},
-							"text"
-			);
+			});
 		});
 		//]]>
 		</script>

@@ -324,8 +324,6 @@ ul.fg-menu li:active {
 	-ms-filter:alpha(opacity=50);
 	filter:alpha(opacity=50);
 	color: #fff;
-	//width: 300px;
-	height: 100%;
 	position: absolute;
 	z-index: 2;
 	top: 0px;
