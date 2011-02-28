@@ -64,7 +64,7 @@ function get_feature_setup()
 	return array(
 		'image' => array(
 			'title' => '大圖片',
-			'shortexp' => '就是會輪換的大圖片，圖片大小為1000*400 pixel',
+			'shortexp' => '就是會輪換的大圖片，圖片大小為 970*390 pixel',
 			'exp' => '',
 			'inputlabel' => '',
 			'type' => 'image_url',
@@ -79,7 +79,7 @@ function get_feature_setup()
 		'textboxwidth' => array(
 			'title' => '半透明文字框的寬度',
 			'shortexp' => '文字框會靠左對齊',
-			'exp' => '以<strong>像素</strong>為單位',
+			'exp' => '以<strong>像素</strong>為單位, 可設為 auto',
 			'inputlabel' => '',
 			'type' => 'text_small'
 		),
