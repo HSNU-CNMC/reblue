@@ -314,9 +314,8 @@ ul.fg-menu li:active {
 #slides {
 	height: 390px;
 }
-#slides p {
+#slides > div {
 	position: absolute;
-	z-index: 2;
 }
 .fg-fs {
 	background-color: #000;

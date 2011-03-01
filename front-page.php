@@ -37,6 +37,8 @@
 				var slides = jQuery.parseJSON(response);
 				for(i in slides)
 				{
+					if(slides[i].draft == "on")
+						continue;
 					var sid = "fg-fs" + i;
 					$('#slides').append("<div id='fg-fs" + i + "'><img width='970' src='" + slides[i].image + "'/></div>");
 					if(slides[i].textboxwidth != "")
