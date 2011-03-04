@@ -3,7 +3,9 @@
  * Template Name: Bulletaeon & WP original search
  */
 global $wpdb;
-
+include_once(WP_PLUGIN_DIR . '/bulletaeon/bt_search.php');
+?>
+<?php
 if ( isset($_GET['sq']) && isset($_GET['st']) && !empty($_GET['st']) && !empty($_GET['sq']) )
 {
 	$st = $wpdb->escape($_GET['st']);
@@ -17,7 +19,7 @@ if ( isset($_GET['sq']) && isset($_GET['st']) && !empty($_GET['st']) && !empty($
 ?>
 			<div class="content-box clear" >
 				<div class="content">
-				<?php do_action('get_bt_search',$sq,$sp); ?>
+				<?php get_bt_search($sq,$sp); ?>
 				</div><!--content-->
 			</div><!--content-box-->
 			<?php  get_footer(); 

@@ -35,8 +35,8 @@ Version: 1.0
 	display: none;
 }
 body {
-	font-size: 16px;
-	font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	font-size: 14px;
+	font-family: "Bitstream Vera Sans", "DejaVu Sans", Tahoma, "Microsoft JhengHei", "LiHei Pro", "文泉驛微米黑", "Droid Sans Fallback", "AR PL UMing TW", "新細明體", sans-serif;
 	background: url(./img/dot2.png) transparent repeat;
 }
 h1 {
@@ -69,7 +69,7 @@ address
 /* Wrapper
  * ========================================== */
 #wrapper {
-	width: 1000px;
+	width: 970px;
 	margin: 0 auto;
 	background-color: #fff;
 	border: 0 solid #aaa;
@@ -226,7 +226,7 @@ list-style: decimal inside;
 }
 .fcolumns_container {
 	margin: auto;
-	width: 70%;
+	width: 75%;
 	background-color: #ececec;
 }
 .fcol {
@@ -312,14 +312,21 @@ ul.fg-menu li:active {
 /* Featured
  * ========================================== */
 #slides {
-	height: 400px;
+	height: 390px;
 }
 #slides > div {
-	width: 1000px;
+	position: absolute;
 }
-#slides p {
+.fg-fs {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.5);
+	-ms-filter:alpha(opacity=50);
+	filter:alpha(opacity=50);
+	color: #fff;
 	position: absolute;
 	z-index: 2;
+	top: 0px;
+	padding: 15px;
 }
 /* Featured-pager
  * ===================== */
@@ -350,7 +357,7 @@ ul.fg-menu li:active {
  * ========================================== */
 .mg-col {
 	float: left;
-	width: 1000px;
+	width: 100%;
 	margin: -1.5% auto 0;
 	text-align: center;
 }

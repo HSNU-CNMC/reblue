@@ -1,5 +1,14 @@
 <?php
-include_once('theme-options.php');
+define('THEMENAME', 'Reblue');
+// All files in config/ folder came from the Eco theme (by Pagelines) , with modifications in order to work properly with Reblue
+// Some of them haven't been completely reviewed.
+include_once('config/config_options.php');
+include_once('config/config_features.php');
+include_once('config/options.class.php');
+include_once('config/init_admin.php');
+include_once('config/admin_functions.php');
+include_once('config/option_templates.php');
+include_once('ajax_slides.php');
 
 function dimox_breadcrumbs() {
  
@@ -112,8 +121,6 @@ function register_my_menus() {
 
 add_action( 'init', 'register_my_menus' );
 
-add_action('admin_menu' , 'ide2_add_admin'); 
-
 function admin_widgets() {
 	register_sidebar( array(
 	'name' => 'Primary Widget Area',
@@ -139,4 +146,15 @@ function set_excerpt_more($more) {
 }
 
 add_filter('excerpt_more', 'set_excerpt_more');
+
+/*
+ * Pagelines Code
+ */
+function checkauthority()
+{
+	if (!current_user_can('edit_themes'))
+ 	wp_die('Sorry, but you don&#8217;t have the administrative privileges needed to do this.');
+}
+
+$GLOBALS['pagelines'] = new Options;
 ?>
