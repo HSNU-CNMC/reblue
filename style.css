@@ -116,10 +116,6 @@ address
 	position: relative;
 	z-index: 4;
 }
-.menu li:hover > ul, 
-.menu li > ul:hover {
-	display: block;
-}
 .menu a:active {
 	background: url(./img/menu-click.png) transparent repeat-x;
 }

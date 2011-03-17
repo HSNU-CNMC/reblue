@@ -79,6 +79,14 @@
 		});
 		//]]>
 		</script>
+		<noscript>
+		<style type="text/css">
+		.menu li:hover > ul, 
+		.menu li > ul:hover {
+			display: block;
+		}
+		</style>
+		</noscript>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
@@ -86,17 +94,19 @@
 		<div id="header" class="clear">
 			<span id="top"></span>
 			<?php get_sidebar();?>
-			<!--<script type='text/javascript' src="<?php bloginfo('template_directory'); ?>/js/effects.js"></script> -->
 			<script type="text/javascript">
-			/* <![CDATA[ */
-			/*
-			jQuery(function(){
-			jQuery("ul.menu").superfish({ 
-			delay:       10000,
-			speed:       250,
-			autoArrows:  false,                           
-			dropShadows: false 
-			}); });*/
+			jQuery(document).ready(
+			function($) {
+				$('ul.menu a').hover(
+				function()
+				{
+					$(this).parent().children('ul.sub-menu').fadeIn(250);
+				},
+				function()
+				{
+					$(this).parent().children('ul.sub-menu').hide();
+				});
+			});
 			//]]>
 			</script>
 		</div><!--header-->
