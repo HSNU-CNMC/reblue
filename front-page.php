@@ -22,20 +22,11 @@
 		<script type='text/javascript' src="<?php bloginfo('template_directory')?>/js/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
+			var slides=<?php do_action('wp_ajax_nopriv_rb_getslides', 'ajax_slide')?>;
 		$(document).ready(
 		function()
 		{
 			$('<div id="slides"></div>').insertBefore('#featurenav');
-			jQuery.post(
-				"./wp-admin/admin-ajax.php",
-			{
-				'action': 'rb_getslides',
-			},
-			function(response){
-				response = response.replace(/-1$/g, '');
-				response = response.replace(/1$/g, '');
-				response = response.replace(/0$/g, '');
-				var slides = jQuery.parseJSON(response);
 				for(i in slides)
 				{
 					if(slides[i].draft == "on")
@@ -85,7 +76,6 @@
 					});
 					<?php endif;?>
 				});
-			});
 		});
 		//]]>
 		</script>
