@@ -22,7 +22,7 @@
 		<script type='text/javascript' src="<?php bloginfo('template_directory')?>/js/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
-			var slides=<?php do_action('wp_ajax_nopriv_rb_getslides', 'ajax_slide')?>;
+			var slides=<?php echo json_encode(pagelines('features'), JSON_FORCE_OBJECT);?>;
 		$(document).ready(
 		function()
 		{

@@ -8,7 +8,6 @@ include_once('config/options.class.php');
 include_once('config/init_admin.php');
 include_once('config/admin_functions.php');
 include_once('config/option_templates.php');
-include_once('ajax_slides.php');
 
 function dimox_breadcrumbs() {
  
