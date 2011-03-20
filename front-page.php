@@ -94,20 +94,16 @@
 		<div id="header" class="clear">
 			<span id="top"></span>
 			<?php get_sidebar();?>
+			<script type='text/javascript' src="<?php bloginfo('template_directory'); ?>/js/effects.js"></script>
 			<script type="text/javascript">
-			jQuery(document).ready(
-			function($) {
-				$('ul.menu a').hover(
-				function()
-				{
-					$(this).parent().children('ul.sub-menu').fadeIn(250);
-				},
-				function()
-				{
-					$(this).parent().children('ul.sub-menu').hide();
-				});
-			});
-			//]]>
+			/* <![CDATA[ */
+			jQuery(function(){
+			jQuery("ul.menu").superfish({ 
+			delay:       3000,
+			speed:       250,
+			autoArrows:  false,                           
+			dropShadows: false 
+			}); });
 			</script>
 		</div><!--header-->
 			<div class="fcontent-box" >
