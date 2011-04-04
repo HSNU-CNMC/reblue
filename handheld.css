@@ -1,0 +1,37 @@
+@import url(style.css);
+
+body {
+	background: none;
+}
+#wrapper {
+	width: 600px;
+}
+/* Widgit
+ * ========================================== */
+.widgit {
+	position: relative;
+	top: 40px;
+	text-align: right;
+	right: 20px;
+}
+#searchform input[type="text"] {
+	width: 100px;
+}
+/* Front-page
+ * ========================================== */
+.fcontent {
+	margin: 10px auto 0;
+	background-color: transparent;
+}
+#slides {
+	display: none;
+}
+#featurenav {
+	display: none;
+}
+.mg-col {
+	float: left;
+	width: 100%;
+	margin: 0 auto 0;
+	text-align: center;
+}
