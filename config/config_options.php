@@ -49,8 +49,8 @@ function get_option_array()
 				'inputlabel' => '完整的 HTML &lt;meta&gt; 標籤（可以有多個）',
 				'title' => '其他 &lt;meta&gt; 標籤',
 				'shortexp' => '以後與 Facebook 整合的時候應該會用到',
-				'exp' => ''*/
-			)
+				'exp' => ''
+			)*/
 		),
 		'analytics' => array(
 			'analytics_script' => array(
