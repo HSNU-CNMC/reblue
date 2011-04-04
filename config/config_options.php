@@ -26,6 +26,24 @@ function get_option_array()
 				'exp' => ''
 			)
 		),
+		'global_options' => array(
+			'custom_header' => array(
+				'default' => get_bloginfo('template_directory') . '/img/banner.png',
+				'type' => 'image_url',
+				'inputlabel' => '',
+				'title' => '頁首橫幅',
+				'shortexp' => '圖片大小 1000*150 px',
+				'exp' => ''
+			),
+			'custom_bg' => array(
+				'default' => get_bloginfo('template_directory') . '/img/wood.jpg',
+				'type' => 'image_url',
+				'inputlabel' => '',
+				'title' => '背景圖片',
+				'shortexp' => '會 repeat',
+				'exp' => ''
+			)
+		),
 		'SEO' => array(
 			'description' => array(
 				'default' => '',

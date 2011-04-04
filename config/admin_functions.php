@@ -242,7 +242,7 @@ function option_engine( $optiontype, $optionname, $optionvalue = null, $optionti
 			<p>
 				<?php if($optionvalue):?>
 					<div class="context">目前圖片：</div> 
-					<img class="border" src="<?php echo $optionvalue;?>" style="width: 90% ;"/></p>
+					<img class="border" src="<?php echo $optionvalue;?>" style="max-width: 90% ;"/></p>
 				<?php endif;?>
 			</p>
 		

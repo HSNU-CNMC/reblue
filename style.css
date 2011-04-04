@@ -37,7 +37,6 @@ Version: 1.0
 body {
 	font-size: 14px;
 	font-family: "Bitstream Vera Sans", "DejaVu Sans", Tahoma, "Microsoft JhengHei", "LiHei Pro", "文泉驛微米黑", "Droid Sans Fallback", "AR PL UMing TW", "新細明體", sans-serif;
-	background: url(./img/dot2.png) transparent repeat;
 }
 h1 {
 	font-size: 1.7em;
@@ -83,7 +82,6 @@ address
 /* Header
  * ========================================== */
 #header {
-	background: url(./img/header.png) #82b0d9 no-repeat;
 	height: 150px;
 }
 /* Menu
@@ -259,6 +257,9 @@ p.error {
 	right: 20px;
 }
 #searchform input[type="text"] {
+	background: none repeat scroll 0 0 #FBFBFB;
+	border: 1px solid #E5E5E5;
+
 	width: 100px;
 	-moz-border-radius:			3px;
 	-khtml-border-radius:		3px;
