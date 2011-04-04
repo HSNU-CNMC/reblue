@@ -14,6 +14,8 @@
 		?></title>
 
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
+		<meta name="description" content="<?php echo pagelines('description'); ?>"/>
+		<meta name="keywords" content="<?php echo pagelines('keywords'); ?>"/>
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>?ver=<?php $file = dirname(__FILE__) . '/style.css'; echo filemtime($file);?>" type="text/css" media="screen" />
 		<!--[if IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<!--[if IE 7]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE7.css?ver=<?php $file = dirname(__FILE__) . '/IE7.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
@@ -87,7 +89,7 @@
 		}
 		</style>
 		</noscript>
-		<?php wp_head(); ?>
+		<?php echo pagelines('analytics_script'); wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="wrapper">
