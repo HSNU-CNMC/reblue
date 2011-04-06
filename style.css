@@ -147,7 +147,7 @@ ul.sub-menu a {
 /* Content
  * ========================================== */
 .content-box {
-	margin: 52px auto 0;
+	margin: 46px auto 0;
 	padding: 0;
 	width: 100%;
 	min-height: 200px;
@@ -155,7 +155,7 @@ ul.sub-menu a {
 }
 .content {
 	margin: 0 auto 5%;
-	padding: 3% 0 2%;
+	padding: 3.5% 0 2%;
 	width: 90%;
 	line-height: 1.5;
 }
