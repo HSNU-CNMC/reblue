@@ -398,3 +398,11 @@ ul.fg-menu li:active {
 #fg-footer p span {
 	margin: 5px;
 }
+/* FB
+ * ========================================== */
+#fg-footer > iframe {
+	float: right;
+	position: relative;
+	top: -15px;
+	left: -100px;
+}
