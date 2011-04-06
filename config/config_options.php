@@ -42,6 +42,14 @@ function get_option_array()
 				'title' => '背景圖片',
 				'shortexp' => '會 repeat',
 				'exp' => ''
+			),
+			'fb_script' => array(
+				'default' => '',
+				'type' => 'textarea_big',
+				'inputlabel' => 'Facebook 提供給你的「讚」按鈕原始碼，應該是 &lt;script&gt;',
+				'title' => 'Facebook 「讚」按鈕原始碼',
+				'shortexp' => '我只用 Javascript 版本測試過喔',
+				'exp' => ''
 			)
 		),
 		'SEO' => array(
@@ -61,12 +69,12 @@ function get_option_array()
 				'shortexp' => '&lt;meta name=&quot;keywords&quot; content=&quot;...&quot;/&gt;',
 				'exp' => '只有在首頁套用'
 			),
-			'other_meta' => array(
+			'fb_meta' => array(
 				'default' => '',
 				'type' => 'textarea_big',
-				'inputlabel' => '完整的 HTML &lt;meta&gt; 標籤（可以有多個）',
-				'title' => '其他 &lt;meta&gt; 標籤',
-				'shortexp' => '以後與 Facebook 整合的時候應該會用到',
+				'inputlabel' => 'Facebook 提供給你的 Open Graph Tags',
+				'title' => 'Facebook 「讚」',
+				'shortexp' => '與 Facebook 整合的時候應該會用到',
 				'exp' => ''
 			)
 		),

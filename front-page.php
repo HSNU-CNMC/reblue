@@ -16,6 +16,9 @@
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 		<meta name="description" content="<?php echo pagelines('description'); ?>"/>
 		<meta name="keywords" content="<?php echo pagelines('keywords'); ?>"/>
+		<!-- Facebook-->
+		<?php pagelines('fb_meta'); ?>
+		<!-- /Facebook-->
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>?ver=<?php $file = dirname(__FILE__) . '/style.css'; echo filemtime($file);?>" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/handheld.css?ver=<?php $file = dirname(__FILE__) . '/handheld.css'; echo filemtime($file);?>" type="text/css" media="handheld" />
 		<!--[if IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
@@ -172,7 +175,8 @@
 				</div><!--fcontent-->
 			</div><!--fcontent-box-->
 			<div id="fg-footer" class="clear text">
-			<?php echo pagelines('contact_info'); ?>
+			<?php echo pagelines('contact_info');
+			echo pagelines('fb_script'); ?>
 			<a href="#top" class="mobile-text">top</a>
 			</div><!--footer-->
 		</div><!--wrapper-->
