@@ -26,6 +26,32 @@ function get_option_array()
 				'exp' => ''
 			)
 		),
+		'global_options' => array(
+			'custom_header' => array(
+				'default' => get_bloginfo('template_directory') . '/img/banner.png',
+				'type' => 'image_url',
+				'inputlabel' => '',
+				'title' => '頁首橫幅',
+				'shortexp' => '圖片大小 1000*150 px',
+				'exp' => ''
+			),
+			'custom_bg' => array(
+				'default' => get_bloginfo('template_directory') . '/img/wood.jpg',
+				'type' => 'image_url',
+				'inputlabel' => '',
+				'title' => '背景圖片',
+				'shortexp' => '會 repeat',
+				'exp' => ''
+			),
+			'fb_script' => array(
+				'default' => '',
+				'type' => 'textarea_big',
+				'inputlabel' => 'Facebook 提供給你的「讚」按鈕原始碼，應該是 &lt;script&gt;',
+				'title' => 'Facebook 「讚」按鈕原始碼',
+				'shortexp' => '我只用 Javascript 版本測試過喔',
+				'exp' => ''
+			)
+		),
 		'SEO' => array(
 			'description' => array(
 				'default' => '',
@@ -43,12 +69,12 @@ function get_option_array()
 				'shortexp' => '&lt;meta name=&quot;keywords&quot; content=&quot;...&quot;/&gt;',
 				'exp' => '只有在首頁套用'
 			),
-			/*'other_meta' => array(
+			'fb_meta' => array(
 				'default' => '',
 				'type' => 'textarea_big',
-				'inputlabel' => '完整的 HTML &lt;meta&gt; 標籤（可以有多個）',
-				'title' => '其他 &lt;meta&gt; 標籤',
-				'shortexp' => '以後與 Facebook 整合的時候應該會用到',
+				'inputlabel' => 'Facebook 提供給你的 Open Graph Tags',
+				'title' => 'Facebook 「讚」',
+				'shortexp' => '與 Facebook 整合的時候應該會用到',
 				'exp' => ''
 			)*/
 		),

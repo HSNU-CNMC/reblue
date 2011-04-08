@@ -16,10 +16,22 @@
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 		<meta name="description" content="<?php echo pagelines('description'); ?>"/>
 		<meta name="keywords" content="<?php echo pagelines('keywords'); ?>"/>
+		<!-- Facebook-->
+		<?php pagelines('fb_meta'); ?>
+		<!-- /Facebook-->
+		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/handheld.css?ver=<?php $file = dirname(__FILE__) . '/handheld.css'; echo filemtime($file);?>" type="text/css" media="handheld" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>?ver=<?php $file = dirname(__FILE__) . '/style.css'; echo filemtime($file);?>" type="text/css" media="screen" />
 		<!--[if IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<!--[if IE 7]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE7.css?ver=<?php $file = dirname(__FILE__) . '/IE7.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<!--[if IE 6]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE6.css?ver=<?php $file = dirname(__FILE__) . '/IE6.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
+		<style type="text/css">
+		body {
+			background: url(<?php echo pagelines('custom_bg') ? pagelines('custom_bg') : get_bloginfo('template_directory') . '/img/wood.jpg';?>) transparent repeat;
+		}
+		#header {
+			background: url(<?php echo pagelines('custom_bg') ? pagelines('custom_header') : get_bloginfo('template_directory') . '/img/banner.png';?>) #82b0d9 no-repeat;
+		}	
+		</style>
 		<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script type='text/javascript' src="<?php bloginfo('template_directory')?>/js/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript">
@@ -48,35 +60,14 @@
 				var $j = jQuery.noConflict();
 				$j(document).ready(function () {
 					$j('#slides').cycle({
-					fx: '<?php if(pagelines('feffect')):?><?php echo pagelines('feffect');?><?php else:?>fade<?php endif;?>',                        
-					sync: <?php if(pagelines('fremovesync')):?>0<?php else:?>1<?php endif;?>,                                                    
-					timeout: <?php if(pagelines('timeout')):?><?php echo pagelines('timeout');?><?php else:?>10000<?php endif;?>,                    
-					speed:  <?php if(pagelines('fspeed')):?><?php echo pagelines('fspeed');?><?php else:?>1500<?php endif;?>,                        
+					fx: '<?php echo pagelines('feffect') ? pagelines('feffect') : 'fade';?>',                        
+					sync: <?php echo pagelines('fremovesync') ? '0' : '1';?>,                                                    
+					timeout: <?php echo pagelines('timeout') ? pagelines('timeout') : '10000';?>,                    
+					speed:  <?php echo pagelines('fspeed') ? pagelines('fspeed') : '1500';?>,                        
 					pager:  '#featurenav',
 					cleartype: true,
 					cleartypeNoBg: true
 					});
-					<?php if(pagelines('feature_nav_type') == 'names'):?>
-						//Overide page numbers on cycle feature with custom text
-						$j("div#featurenav").children("a").each(function(){ 
-						<?php $count = 1;                                                                  
-						foreach(pagelines('features') as $key => $feature):?>                    
-							if($j(this).html() == "<?php echo $count;?>") { $j(this).html("<?php echo $feature['name'];?>");}
-							<?php $count += 1;?>
-						<?php endforeach;?>
-						});
-					<?php endif;?>
-			
-					<?php if(pagelines('feature_nav_type') == 'thumbs'):?>	
-					//Overide page numbers on cycle feature with custom text
-					$j("div#featurenav").children("a").each(function() {
-						<?php $count = 1;?>
-						<?php foreach(pagelines('features') as $key => $feature):?>
-						if($j(this).html() == "<?php echo $count;?>") {$j(this).html('<span class="nav_thumb" style="background: transparent url(<?php echo $feature["thumb"];?>) no-repeat 0 0;"><span class="nav_overlay">&nbsp;</span></span>');}
-						<?php $count += 1;?>
-						<?php endforeach;?>
-					});
-					<?php endif;?>
 				});
 		});
 		//]]>
@@ -89,7 +80,7 @@
 		}
 		</style>
 		</noscript>
-		<?php echo pagelines('analytics_script'); wp_head(); ?>
+		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="wrapper">
@@ -163,10 +154,11 @@
 				</div><!--fcontent-->
 			</div><!--fcontent-box-->
 			<div id="fg-footer" class="clear text">
-			<?php echo pagelines('contact_info'); ?>
+			<?php echo pagelines('contact_info');
+			echo pagelines('fb_script'); ?>
 			<a href="#top" class="mobile-text">top</a>
 			</div><!--footer-->
 		</div><!--wrapper-->
-		<?php wp_footer(); ?>
+		<?php echo pagelines('analytics_script'); wp_footer(); ?>
 	</body>
 </html>
