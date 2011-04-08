@@ -29,22 +29,6 @@ function get_feature_array()
 					'shortexp' => '',
 					'exp' => ''
 				),
-			/*'feature_playpause' => array(
-					'default' => false,
-					'type' => 'check',
-					'inputlabel' => 'Show play pause button?',
-					'title' => 'Show Play/Pause Button (when timeout is greater than 0 (auto-transition))',
-					'shortexp' => "Show a play/pause button for auto-scrolling features",
-					'exp' => "Selecting this option will add a play/pause button for auto-scrolling features, that users can use to pause and watch a video, read a feature, etc.."
-				),*/
-			'feature_name_nav' => array(
-					'default' => false,
-					'type' => 'check',
-					'inputlabel' => 'Use names for feature navigation?',
-					'title' => 'Use feature names for navigation',
-					'shortexp' => "Substitutes the feature names for the numbers for the feature slides",
-					'exp' => "This option will substitute the feature names for the numbers in the feature navigation."
-				),
 			'fremovesync' => array(
 					'default' => false,
 					'type' => 'check',
