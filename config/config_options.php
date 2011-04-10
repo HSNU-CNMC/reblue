@@ -76,7 +76,7 @@ function get_option_array()
 				'title' => 'Facebook 「讚」',
 				'shortexp' => '與 Facebook 整合的時候應該會用到',
 				'exp' => ''
-			)*/
+			)
 		),
 		'analytics' => array(
 			'analytics_script' => array(
