@@ -318,6 +318,16 @@ ul.fg-menu li:active {
 #slides > div {
 	position: absolute;
 }
+#slides a:link,
+#slides a:visited {
+	text-decoration: none;
+	color: #A0BFF2;
+}
+#slides a:hover,
+#slides a:active {
+	text-decoration: underline;
+	color: #A0BFF2;
+}
 .fg-fs {
 	background-color: #000;
 	background-color: rgba(0, 0, 0, 0.5);
