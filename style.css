@@ -89,7 +89,6 @@ address
 .menu {
 	text-align: center;
 	background: url(./img/menu.png) transparent repeat-x;
-	margin: 138px 0 30px;
 	padding: 9px 0;
 	position: relative;
 }
@@ -100,7 +99,7 @@ address
 	padding: 0;
 }
 .menu a {
-	padding: 11px 5px 8px;
+	padding: 9px 5px 8px;
 	position: relative;
 	top: 1px;
 }
@@ -147,7 +146,6 @@ ul.sub-menu a {
 /* Content
  * ========================================== */
 .content-box {
-	margin: 46px auto 0;
 	padding: 0;
 	width: 100%;
 	min-height: 200px;
@@ -301,13 +299,13 @@ ul.fg-menu li:active {
 	background-color: ;
 }
 .fg-bt-menu {
-	margin: 15px 0 31px;
+	margin: 0 0 31px;
 }
 /* Content
  * ========================================== */
 .fcontent {
 	height: 455px;
-	margin: 10px auto 0;
+	margin: 0 auto;
 	background-color: #f7f7f7;
 }
 /* Featured
