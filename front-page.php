@@ -153,10 +153,22 @@
 					</div><!--mg-col-->
 				</div><!--fcontent-->
 			</div><!--fcontent-box-->
-			<div id="fg-footer" class="clear text">
-			<?php echo pagelines('contact_info');
-			echo pagelines('fb_script'); ?>
-			<a href="#top" class="mobile-text">top</a>
+			<div class="footer clear text">
+				<div class="effect">
+					<div class="fcolumns_container text">
+						<?php	for ( $i = 1 ; $i <= 4 ; $i++ )
+						{
+							echo '<div class="fcol">';
+							echo pagelines('footer_col'.$i);
+							echo '</div>';
+						} ?>
+						<div class="fcol">
+						<?php echo pagelines('inside_contact_info'); ?>
+						</div>
+					</div><!--fcolumns_container-->
+				<a href="#top" class="mobile-text">top</a>
+				</div><!--effect-->
+			<?php echo pagelines('fb_script'); ?>
 			</div><!--footer-->
 		</div><!--wrapper-->
 		<?php echo pagelines('analytics_script'); wp_footer(); ?>
