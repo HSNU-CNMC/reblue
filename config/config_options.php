@@ -6,22 +6,12 @@
 function get_option_array()
 {
 	$options = array(
-		'front_page' => array(
-			'contact_info' => array(
-				'default' => 'Made by CNMC',
-				'type' => 'textarea_big',
-				'inputlabel' => '文字或 HTML',
-				'title' => '首頁頁尾的訊息',
-				'shortexp' => '版權與聯絡訊息',
-				'exp' => ''
-			)
-		),
 		'footer_options' => array(
 			'inside_contact_info' => array(
 				'default' => 'Made by CNMC',
 				'type' => 'textarea_big',
 				'inputlabel' => '文字或 HTML',
-				'title' => '內頁頁尾的訊息',
+				'title' => '頁尾的訊息',
 				'shortexp' => '版權與聯絡訊息',
 				'exp' => ''
 			)

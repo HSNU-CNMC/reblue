@@ -21,7 +21,7 @@
 		<!-- /Facebook-->
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/handheld.css?ver=<?php $file = dirname(__FILE__) . '/handheld.css'; echo filemtime($file);?>" type="text/css" media="handheld" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>?ver=<?php $file = dirname(__FILE__) . '/style.css'; echo filemtime($file);?>" type="text/css" media="screen" />
-		<!--[if IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
+		<!--[if IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE8.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<!--[if IE 7]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE7.css?ver=<?php $file = dirname(__FILE__) . '/IE7.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<!--[if IE 6]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE6.css?ver=<?php $file = dirname(__FILE__) . '/IE6.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<style type="text/css">
@@ -153,10 +153,22 @@
 					</div><!--mg-col-->
 				</div><!--fcontent-->
 			</div><!--fcontent-box-->
-			<div id="fg-footer" class="clear text">
-			<?php echo pagelines('contact_info');
-			echo pagelines('fb_script'); ?>
-			<a href="#top" class="mobile-text">top</a>
+			<div class="footer clear text">
+				<div class="effect">
+					<div class="fcolumns_container text">
+						<?php	for ( $i = 1 ; $i <= 4 ; $i++ )
+						{
+							echo '<div class="fcol">';
+							echo pagelines('footer_col'.$i);
+							echo '</div>';
+						} ?>
+						<div class="fcol">
+						<?php echo pagelines('inside_contact_info'); ?>
+						</div>
+					</div><!--fcolumns_container-->
+				<a href="#top" class="mobile-text">top</a>
+				</div><!--effect-->
+			<?php echo pagelines('fb_script'); ?>
 			</div><!--footer-->
 		</div><!--wrapper-->
 		<?php echo pagelines('analytics_script'); wp_footer(); ?>
