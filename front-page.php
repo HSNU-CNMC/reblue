@@ -36,7 +36,9 @@
 		<script type='text/javascript' src="<?php bloginfo('template_directory')?>/js/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
-			var slides=<?php echo json_encode(pagelines('features'), JSON_FORCE_OBJECT);?>;
+			var slides=<?php $features = pagelines('features');
+			krsort($features);
+			echo json_encode($features, JSON_FORCE_OBJECT);?>;
 		$(document).ready(
 		function()
 		{
