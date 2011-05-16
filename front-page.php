@@ -37,8 +37,12 @@
 		<script type="text/javascript">
 		/* <![CDATA[ */
 			var slides=<?php $features = pagelines('features');
+			/* Show slides in reverse order, newer first
+			 * Firefox determines the order by the sequence of echoed slides, so we need only krsort() to make it work.
+			 * However, Chrome and IE9 determines the order by the array keys of slides (low to high) ,
+			 * so we need array_values() to re-generate the array keys
 			krsort($features);
-			echo json_encode($features, JSON_FORCE_OBJECT);?>;
+			echo json_encode(array_values($features), JSON_FORCE_OBJECT);?>;
 		$(document).ready(
 		function()
 		{
