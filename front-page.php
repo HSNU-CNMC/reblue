@@ -36,45 +36,45 @@
 		<script type='text/javascript' src="<?php bloginfo('template_directory')?>/js/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
-			var slides=<?php $features = pagelines('features');
+		var slides=<?php $features = pagelines('features');
 			/* Show slides in reverse order, newer first
 			 * Firefox determines the order by the sequence of echoed slides, so we need only krsort() to make it work.
 			 * However, Chrome and IE9 determines the order by the array keys of slides (low to high) ,
 			 * so we need array_values() to re-generate the array keys */
-			krsort($features);
-			echo json_encode(array_values($features), JSON_FORCE_OBJECT);?>;
+		krsort($features);
+		echo json_encode(array_values($features), JSON_FORCE_OBJECT);?>;
 		$(document).ready(
 		function()
 		{
 			$('<div id="slides"></div>').insertBefore('#featurenav');
-				for(i in slides)
+			for(i in slides)
+			{
+				if(slides[i].draft == "on")
+					continue;
+				var sid = "fg-fs" + i;
+				$('#slides').append("<div id='fg-fs" + i + "'><img width='970' src='" + slides[i].image + "'/></div>");
+				if(slides[i].textboxwidth != "")
 				{
-					if(slides[i].draft == "on")
-						continue;
-					var sid = "fg-fs" + i;
-					$('#slides').append("<div id='fg-fs" + i + "'><img width='970' src='" + slides[i].image + "'/></div>");
-					if(slides[i].textboxwidth != "")
-					{
-						//chrome cause some problem with getting height
-						//hard-code to solve
-						//var sh = $('div#' + sid ).children('img').css('height');
-						var sh = 358;
-						$('#' + sid ).append("<div class='fg-fs' style='width:" + slides[i].textboxwidth  + "px; height:" + sh +"px'>" + slides[i].text + "</div>");
-					}
-					$('#slides img').load();
+					//chrome cause some problem with getting height
+					//hard-code to solve
+					//var sh = $('div#' + sid ).children('img').css('height');
+					var sh = 358;
+					$('#' + sid ).append("<div class='fg-fs' style='width:" + slides[i].textboxwidth  + "px; height:" + sh +"px'>" + slides[i].text + "</div>");
 				}
-				var $j = jQuery.noConflict();
-				$j(document).ready(function () {
-					$j('#slides').cycle({
-					fx: '<?php echo pagelines('feffect') ? pagelines('feffect') : 'fade';?>',                        
-					sync: <?php echo pagelines('fremovesync') ? '0' : '1';?>,                                                    
-					timeout: <?php echo pagelines('timeout') ? pagelines('timeout') : '10000';?>,                    
-					speed:  <?php echo pagelines('fspeed') ? pagelines('fspeed') : '1500';?>,                        
-					pager:  '#featurenav',
-					cleartype: true,
-					cleartypeNoBg: true
-					});
+				$('#slides img').load();
+			}
+			var $j = jQuery.noConflict();
+			$j(document).ready(function () {
+				$j('#slides').cycle({
+				fx: '<?php echo pagelines('feffect') ? pagelines('feffect') : 'fade';?>',                        
+				sync: <?php echo pagelines('fremovesync') ? '0' : '1';?>,                                                    
+				timeout: <?php echo pagelines('timeout') ? pagelines('timeout') : '10000';?>,                    
+				speed:  <?php echo pagelines('fspeed') ? pagelines('fspeed') : '1500';?>,                        
+				pager:  '#featurenav',
+				cleartype: true,
+				cleartypeNoBg: true
 				});
+			});
 		});
 		//]]>
 		</script>
