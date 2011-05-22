@@ -72,7 +72,8 @@
 				speed:  <?php echo pagelines('fspeed') ? pagelines('fspeed') : '1500';?>,                        
 				pager:  '#featurenav',
 				cleartype: true,
-				cleartypeNoBg: true
+				cleartypeNoBg: true,
+				pause: true
 				});
 			});
 		});
