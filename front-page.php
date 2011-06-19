@@ -109,9 +109,10 @@
 				'-khtml-border-radius':			'5px 5px 0 0',
 				'-webkit-border-radius':		'5px 5px 0 0',
 				'box-shadow': 'inset 0 12px 10px #fff',
+				'text-shadow': '0 1px 0 #fff, 0 -0.5px 0 #222',
 				'font-size': '1.2em',
 				'position': 'relative',
-				'color': '#000',
+				'color': '#666',
 				'text-decoration': 'none'
 			});
 			$('#fgcol-nav a').hover(
