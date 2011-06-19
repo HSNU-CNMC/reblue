@@ -100,7 +100,7 @@
 			});
 			$('#fgcol-nav > li').css({ 'display': 'inline'});
 			$('#fgcol-nav a').css({
-				'padding': '5px 10px',
+				'padding': '8px 15px 5px',
 				'margin': '0 2px',
 				'border': '1px solid #ddd',
 				'border-bottom': '0',
@@ -108,9 +108,9 @@
 				'-moz-border-radius':			'5px 5px 0 0',
 				'-khtml-border-radius':			'5px 5px 0 0',
 				'-webkit-border-radius':		'5px 5px 0 0',
-				'box-shadow': 'inset 0 12px 10px #fff',
+				'box-shadow': 'inset 0 20px 8px #fff',
 				'text-shadow': '0 1px 0 #fff, 0 -0.5px 0 #222',
-				'font-size': '1.2em',
+				'font-size': '1.3em',
 				'position': 'relative',
 				'color': '#666',
 				'text-decoration': 'none'
