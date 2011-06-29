@@ -71,7 +71,6 @@
 
 			$('.mg-col').append('<ul id="fgcol-nav"></ul><div class="fgcol" id="fgcol-tab"></div>');
 
-			//for(var i=0; i<fgcol_cnt; i++)
 			var first = 0;
 			for(i in fgtab)
 			{
@@ -88,7 +87,6 @@
 				{
 					$('#fgcol-nav > li > a').addClass('curnav');
 					$('#fgcol-tab > div').addClass('curtab');
-					$('#fgcol-tab').height( $('#tab' + i ).height() );
 					first = 1;
 				}
 			}
@@ -147,6 +145,7 @@
 				'width': '95%'
 		   	});
 			$('.curtab').css({ 'display': 'block' });
+			$('#fgcol-tab').height( $('.curtab' ).css('height') );
 			//the end of style
 			$('#fgcol-nav > li > a').click( 
 				function() {
@@ -216,7 +215,7 @@
 				<div class="fcontent">
 					<?php wp_nav_menu(  array( 'menu' => 'hsnu-menu', 'container' => '', 'menu_class' => 'clear menu fg-bt-menu' ) ); ?>
 					<noscript>
-					<div id="" style="height: 390px;">
+					<div style="height: 390px;">
 <?php
 					foreach ( pagelines('features') as $key => $feature )
 					{
