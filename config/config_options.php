@@ -33,6 +33,14 @@ function get_option_array()
 				'shortexp' => '會 repeat',
 				'exp' => ''
 			),
+			/*'ie_annoying_message' => array(
+				'default' => 'true',
+				'type' => 'check',
+				'inputlabel' => '啟用給IE使用者的惱人訊息',
+				'title' => '給IE的惱人訊息',
+				'shortexp' => 'For IE[6-8]',
+				'exp' => ''
+			),*/
 			'fb_script' => array(
 				'default' => '',
 				'type' => 'textarea_big',
