@@ -414,3 +414,12 @@ ul.fg-menu li:active {
 	top: -15px;
 	left: -100px;
 }
+/* Notification Bar */
+#notify-container {
+	background-color: #F4A83D;
+	font-size: 130%;
+	font-weight: bold;
+	text-align: center;
+	color: #735005;
+	padding: 7px 0;
+}

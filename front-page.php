@@ -21,9 +21,6 @@
 		<!-- /Facebook-->
 		<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/handheld.css?ver=<?php $file = dirname(__FILE__) . '/handheld.css'; echo filemtime($file);?>" type="text/css" media="handheld" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>?ver=<?php $file = dirname(__FILE__) . '/style.css'; echo filemtime($file);?>" type="text/css" media="screen" />
-		<!--[if IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE8.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE7.css?ver=<?php $file = dirname(__FILE__) . '/IE7.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
-		<!--[if IE 6]><link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE6.css?ver=<?php $file = dirname(__FILE__) . '/IE6.css'; echo filemtime($file);?>" type="text/css" /><![endif]-->
 		<style type="text/css">
 		body {
 			background: url(<?php echo pagelines('custom_bg') ? pagelines('custom_bg') : get_bloginfo('template_directory') . '/img/wood.jpg';?>) transparent repeat;
@@ -32,7 +29,7 @@
 			background: url(<?php echo pagelines('custom_bg') ? pagelines('custom_header') : get_bloginfo('template_directory') . '/img/banner.png';?>) #82b0d9 no-repeat;
 		}	
 		</style>
-		<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 		<script type='text/javascript' src="<?php bloginfo('template_directory')?>/js/jquery.cycle.all.min.js"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
@@ -184,6 +181,51 @@
 		});
 		//]]>
 		</script>
+		<!--[if IE 8]>
+			<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE8.css?ver=<?php $file = dirname(__FILE__) . '/IE8.css'; echo filemtime($file);?>" type="text/css" />
+			<script type="text/javascript">
+				jQuery(document).ready(
+				function($) {
+					$('body').prepend('<div id="notify-container">\
+						<div style="" id="notify1">\
+						<span class="notify-close"><a title="dismiss this notification">×</a></span>\
+						<span class="notify-text">看起來您使用的是Internet Explorer 8，建議您改用<a href="http://www.hs.ntnu.edu.tw/choose-a-browser/">其他瀏覽器</a>，以獲得最佳瀏覽效果。</span>\
+						</div></div>');
+					$('.notify-close').click(function () { $('#notify-container').remove(); } );
+				}
+				);
+			</script>
+		<![endif]-->
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE7.css?ver=<?php $file = dirname(__FILE__) . '/IE7.css'; echo filemtime($file);?>" type="text/css" />
+			<script type="text/javascript">
+				jQuery(document).ready(
+				function($) {
+					$('body').prepend('<div id="notify-container">\
+						<div style="" id="notify1">\
+						<span class="notify-close"><a title="dismiss this notification">×</a></span>\
+						<span class="notify-text">看起來您使用的是Internet Explorer 7，建議您改用<a href="http://www.hs.ntnu.edu.tw/choose-a-browser/">其他瀏覽器</a>，以獲得最佳瀏覽效果。</span>\
+						</div></div>');
+					$('.notify-close').click(function () { $('#notify-container').remove(); } );
+				}
+				);
+			</script>
+		<![endif]-->
+		<!--[if IE 6]>
+			<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/IE6.css?ver=<?php $file = dirname(__FILE__) . '/IE6.css'; echo filemtime($file);?>" type="text/css" />
+			<script type="text/javascript">
+				jQuery(document).ready(
+				function($) {
+					$('body').prepend('<div id="notify-container">\
+						<div style="" id="notify1">\
+						<span class="notify-close"><a title="dismiss this notification">×</a></span>\
+						<span class="notify-text">看起來您使用的是Internet Explorer 6，建議您改用<a href="http://www.hs.ntnu.edu.tw/choose-a-browser/">其他瀏覽器</a>，以獲得最佳瀏覽效果。</span>\
+						</div></div>');
+					$('.notify-close').click(function () { $('#notify-container').remove(); } );
+				}
+				);
+			</script>
+		<![endif]-->
 		<noscript>
 		<style type="text/css">
 		.menu li:hover > ul, 
@@ -195,6 +237,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<!--<div id="notify-container"><div style="" id="notify1"><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Welcome to Q&amp;A for professional and enthusiast programmers &mdash; check out the <a href="/faq" onclick="StackExchange.notify.closeFirstTime(); return false;">FAQ</a>!</span></div></div>-->
 		<div id="wrapper">
 		<div id="header" class="clear">
 			<span id="top"></span>
