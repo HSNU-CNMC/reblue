@@ -69,6 +69,7 @@
 			$('.mg-col').append('<ul id="fgcol-nav"></ul><div class="fgcol" id="fgcol-tab"></div>');
 
 			var first = 0;
+			//fgtab.reverse(); // Reverse array key for fgtab
 			for(i in fgtab)
 			{
 				$('#fgcol-nav').append('<li><a href="#tab'+ i + '">' + fgtab[i].name + "</a></li>" );
@@ -78,7 +79,12 @@
 					tabmsg += '<tr><td>' + fgtab[i].msgs[j].msg_time + '</td><td><a href="?mid=' + fgtab[i].msgs[j].msg_id + '">' + fgtab[i].msgs[j].msg_title + '</a></td></tr>';
 					
 				}
-				var tabdiv = '<div id="tab' + i + '"><table id="newmsg"><colgroup><col id="newmsg_time"/><col /></colgroup>' + tabmsg + '</table></div>';
+				if(fgtab[i].link == "")
+				{
+					var tabdiv = '<div id="tab' + i + '"><table id="newmsg"><colgroup><col id="newmsg_time"/><col /></colgroup>' + tabmsg + '</table></div>';
+				}else{
+					var tabdiv = '<div id="tab' + i + '"><table id="newmsg"><colgroup><col id="newmsg_time"/><col /></colgroup>' + tabmsg + '</table><p style="text-align: right;"><a href="' + fgtab[i].link + '">更多</a></p></div>';
+				}
 				$('#fgcol-tab').append(tabdiv);
 				if( !first )
 				{
