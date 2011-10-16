@@ -70,8 +70,16 @@
 
 			var first = 0;
 			//fgtab.reverse(); // Reverse array key for fgtab
-			for(i in fgtab)
+			
+			var seq = new Array(); // http://stackoverflow.com/questions/640745/google-chrome-javascript-associative-arrays-evaluated-out-of-sequence
+			var k=100;
+			for (i in fgtab)
+				seq[k++]=i;
+			seq.sort();
+			seq.reverse();
+			for(k in seq)
 			{
+				i=seq[k];
 				$('#fgcol-nav').append('<li><a href="#tab'+ i + '">' + fgtab[i].name + "</a></li>" );
 				var tabmsg='';
 				for(j in fgtab[i].msgs)
