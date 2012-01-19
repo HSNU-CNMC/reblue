@@ -356,7 +356,8 @@ ul.fg-menu li:active {
 	padding: 4px 8px;
 	z-index: 999;
 	position: relative;
-	top: -50px;
+	top: -40px;
+	opacity: 0;	
 }
 #featurenav a:hover {
 	text-decoration: none;
