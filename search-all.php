@@ -61,7 +61,7 @@ die;
 		}
 	}
 	check_search_type();
-	$('select').change(function () {
+	$('select[name="type"]').change(function () {
 		check_search_type(); });
 		</script>
 	</div><!--content-->
