@@ -51,12 +51,12 @@ die;
 			<div id="inserthere"></div>
 			<input type="submit" id="searchsubmit" value="搜尋" tabindex="2" />
 		</form>
-	<script>
+	<script type="text/javascript">
 	function check_search_type() {
 		$('div#inserthere').empty();
-		if ( $('select option:selected').val() == 'bt' ) {
+		if ( $('select option:selected:last').val() == 'bt' ) {
 			$('div#inserthere').append('<label>公告標題<input type="text" value="<?php the_search_query(); ?>" name="title" id="s" tabindex="1" /></label><label>公告單位<input type="text" value="" name="owner" id="o" tabindex="2" /></label><p>輸入一個條件即可，不會同時檢查兩個條件</p>');
-		} else if ( $('select option:selected').val() == 'wp' ) {
+		} else if ( $('select option:selected:last').val() == 'wp' ) {
 			$('div#inserthere').append('<label>文章關鍵字<input type="text" value="" name="post" id="p" tabindex="1" /></label>');
 		}
 	}
