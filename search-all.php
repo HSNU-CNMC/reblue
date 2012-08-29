@@ -27,7 +27,7 @@ if ( ( isset($_GET['type']) && !empty($_GET['type']) ) || ( isset($_GET['st']) &
 		} elseif ( isset($_GET['owner']) ) {
 			do_action('get_bt_search_by_owner', $owner_query, $page);
 		}
-		?>
+?>
 	</div><!--content-->
 </div><!--content-box-->
 <?php  get_footer(); 
@@ -41,7 +41,29 @@ die;
 	get_header();?>
 <div class="content-box clear" >
 	<div class="content">
-		<?php get_search_form(); ?>
+		<form method="get" id="searchform" action="<?php bloginfo('url')?>/search">
+			<label id="type">搜尋目標
+				<select name="type" tabindex="3">
+					<option value="bt">公告</option>
+					<option value="wp">文章</option>
+				</select>
+			</label>
+			<div id="inserthere"></div>
+			<input type="submit" id="searchsubmit" value="搜尋" tabindex="2" />
+		</form>
+	<script type="text/javascript">
+	function check_search_type() {
+		$('div#inserthere').empty();
+		if ( $('select option:selected:last').val() == 'bt' ) {
+			$('div#inserthere').append('<label>公告標題<input type="text" value="<?php the_search_query(); ?>" name="title" id="s" tabindex="1" /></label><label>公告單位<input type="text" value="" name="owner" id="o" tabindex="2" /></label><p>輸入一個條件即可，不會同時檢查兩個條件</p>');
+		} else if ( $('select option:selected:last').val() == 'wp' ) {
+			$('div#inserthere').append('<label>文章關鍵字<input type="text" value="" name="post" id="p" tabindex="1" /></label>');
+		}
+	}
+	check_search_type();
+	$('select[name="type"]').change(function () {
+		check_search_type(); });
+		</script>
 	</div><!--content-->
 </div><!--content-box-->
 <?php get_footer();
