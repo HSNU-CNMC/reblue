@@ -254,16 +254,16 @@ p.error {
 	text-align: right;
 	right: 20px;
 }
-#searchform input[type="text"] {
+#widget_searchform input[type="text"] , #searchpage_searchform input[type="text"] {
 	background: none repeat scroll 0 0 #FBFBFB;
 	border: 1px solid #E5E5E5;
-
-	width: 100px;
-	-moz-border-radius:			3px;
-	-khtml-border-radius:		3px;
-	-webkit-border-radius:	3px;
-	border-radius:					3px;
+	width: 10em;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 }
+
 /* Front-page
  * ==================================================================================== */
 /* Menue
