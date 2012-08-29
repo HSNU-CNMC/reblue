@@ -47,7 +47,7 @@ die;
 	<div class="content">
 		<form method="get" id="searchform" action="<?php bloginfo('url')?>/search">
 			<label id="type">搜尋目標
-				<select name="type" tabindex="3">
+				<select name="type" id="searchpage_select"tabindex="3">
 					<option value="bt">公告</option>
 					<option value="wp">文章</option>
 				</select>
@@ -56,17 +56,17 @@ die;
 			<input type="submit" id="searchsubmit" value="搜尋" tabindex="2" />
 		</form>
 	<script type="text/javascript">
-	function check_search_type() {
+	function searchpage_check_search_type() {
 		$('div#inserthere').empty();
-		if ( $('select option:selected:last').val() == 'bt' ) {
+		if ( $('select#searchpage_select option:selected').val() == 'bt' ) {
 			$('div#inserthere').append('<label>公告標題<input type="text" value="<?php the_search_query(); ?>" name="title" id="s" tabindex="1" /></label><label>公告單位<input type="text" value="" name="owner" id="o" tabindex="2" /></label><p>輸入一個條件即可，不會同時檢查兩個條件</p>');
-		} else if ( $('select option:selected:last').val() == 'wp' ) {
+		} else if ( $('select#searchpage_select option:selected').val() == 'wp' ) {
 			$('div#inserthere').append('<label>文章關鍵字<input type="text" value="" name="post" id="p" tabindex="1" /></label>');
 		}
 	}
-	check_search_type();
-	$('select[name="type"]').change(function () {
-		check_search_type(); });
+	searchpage_check_search_type();
+	$('select#searchpage_select').change(function () {
+		searchpage_check_search_type(); });
 		</script>
 	</div><!--content-->
 </div><!--content-box-->
