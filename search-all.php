@@ -22,9 +22,13 @@ if ( ( isset($_GET['type']) && !empty($_GET['type']) ) || ( isset($_GET['st']) &
 	<div class="content">
 <?php
 		// Search by title or by owner?
-		if ( isset($_GET['title']) ) {
+		if ( !empty($title_query) && !empty($owner_query) ) {
+			echo '<p>警告，您同時指定了「公告標題」及「公告單位」兩個條件，但本系統尚不支援同時使用兩個以上的條件！
+				目前的搜尋結果只套用了「公告標題」的條件。</p>';
 			do_action('get_bt_search_by_title',$title_query,$page);
-		} elseif ( isset($_GET['owner']) ) {
+		} elseif ( !empty($title_query) ) {
+			do_action('get_bt_search_by_title',$title_query,$page);
+		} elseif ( !empty($owner_query) ) {
 			do_action('get_bt_search_by_owner', $owner_query, $page);
 		}
 ?>
