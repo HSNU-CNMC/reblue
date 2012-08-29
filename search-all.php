@@ -45,7 +45,7 @@ die;
 	get_header();?>
 <div class="content-box clear" >
 	<div class="content">
-		<form method="get" id="searchform" action="<?php bloginfo('url')?>/search">
+		<form method="get" id="searchpage_searchform" action="<?php bloginfo('url')?>/search">
 			<label id="type">搜尋目標
 				<select name="type" id="searchpage_select"tabindex="3">
 					<option value="bt">公告</option>
