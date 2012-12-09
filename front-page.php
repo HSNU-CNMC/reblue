@@ -309,7 +309,7 @@ if ( has_action('get_newmsg') )
 	foreach ( pagelines('fboxes') as $fbox )
 	{
 		echo '<div class="fgcol">';
-		do_action('get_newmsg', $fbox['bt_amount'], $fbox['bt_category'], $fbox['title'], $fbox['bt_more']);
+		echo var_dump(get_newmsg($fbox['bt_amount'], $fbox['bt_category'], true));
 		echo '</div>';
 	}
 } else {
