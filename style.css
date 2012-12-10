@@ -392,6 +392,54 @@ ul.fg-menu li:active {
 #newmsg_time_more {
 	text-align: right;
 }
+ul#fgcol-nav {
+	margin: 1% 5% 0;
+	text-align: left;
+	width: 93%;
+}
+ul#fgcol-nav > li {
+	display: inline;
+}
+ul#fgcol-nav a {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: transparent;
+	border-color: #DDDDDD #DDDDDD -moz-use-text-color;
+	border-image: none;
+	border-radius: 5px 5px 0 0;
+	border-style: solid solid none;
+	border-width: 1px 1px 0;
+	box-shadow: 0 20px 8px #FFFFFF inset;
+	color: #666666;
+	font-size: 1.3em;
+	margin: 0 2px;
+	padding: 8px 15px 5px;
+	position: relative;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #FFFFFF, 0 -0.5px 0 #222222;
+	z-index: 1;
+}
+ul#fgcol-nav a.curnav {
+	background-color: #F1F0ED;
+	z-index: 9;
+}
+div#fgcol-tab {
+	box-shadow: 0 0 10px #BBBBBB;
+	height: 210px;
+	margin-top: 0;
+	position: relative;
+	z-index: 5;
+}
+div#fgcol-tab > div {
+	display: none;
+	position: absolute;
+	width: 95%;
+}
+div#fgcol-tab > div.curtab {
+	display: block;
+}
 /* Footer
  * ========================================== */
 #fg-footer {
