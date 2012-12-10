@@ -40,7 +40,6 @@ var slides=<?php $features = pagelines('features');
  * so we need array_values() to re-generate the array keys */
 krsort($features);
 echo json_encode(array_values($features), JSON_FORCE_OBJECT);?>;
-var fgtab=<?php do_action('bt_get_allmsg', 10 );?>;
 
 jQuery(document).ready(
 	function($)
@@ -62,68 +61,8 @@ jQuery(document).ready(
 			}
 			$('#slides img').load();
 		}
-		// Handling mg-col
-		var fgcol = $('.fgcol');
-		var fgcol_cnt = fgcol.size();
 
-		//$('.mg-col').append('<ul id="fgcol-nav"></ul><div class="fgcol" id="fgcol-tab"></div>');
-
-		var first = 0;
-		//fgtab.reverse(); // Reverse array key for fgtab
-
-		var seq = new Array(); // http://stackoverflow.com/questions/640745/google-chrome-javascript-associative-arrays-evaluated-out-of-sequence
-		var k=100;
-		for (i in fgtab)
-			seq[k++]=i;
-		seq.sort();
-		seq.reverse();
-		/*for(k in seq)
-		{
-			i=seq[k];
-			$('#fgcol-nav').append('<li><a href="#tab'+ i + '">' + fgtab[i].name + "</a></li>" );
-			var tabmsg='';
-			for(j in fgtab[i].msgs)
-			{
-				tabmsg += '<tr><td>' + fgtab[i].msgs[j].msg_time + '</td><td><a href="?mid=' + fgtab[i].msgs[j].msg_id + '">' + fgtab[i].msgs[j].msg_title + '</a></td></tr>';
-
-			}
-			if(fgtab[i].link == "")
-			{
-				var tabdiv = '<div id="tab' + i + '"><table id="newmsg"><colgroup><col id="newmsg_time"/><col /></colgroup>' + tabmsg + '</table></div>';
-			}else{
-				var tabdiv = '<div id="tab' + i + '"><table id="newmsg"><colgroup><col id="newmsg_time"/><col /></colgroup>' + tabmsg + '</table><p style="text-align: right;"><a href="' + fgtab[i].link + '">更多</a></p></div>';
-			}
-			$('#fgcol-tab').append(tabdiv);
-			if( !first )
-			{
-				$('#fgcol-nav > li > a').addClass('curnav');
-				$('#fgcol-tab > div').addClass('curtab');
-				first = 1;
-		}
-	}*/
-		//style
-		$('#fgcol-nav').css({
-			'width': '93%',
-				'text-align': 'left',
-				'margin': '1%5% 0'
-		});
-		$('#fgcol-nav > li').css({ 'display': 'inline'});
-		$('#fgcol-nav a').css({
-			'padding': '8px 15px 5px',
-				'margin': '0 2px',
-				'border': '1px solid #ddd',
-				'border-bottom': '0',
-				'border-radius':				'5px 5px 0 0',
-				'-moz-border-radius':			'5px 5px 0 0',
-				'-khtml-border-radius':			'5px 5px 0 0',
-				'-webkit-border-radius':		'5px 5px 0 0',
-				'box-shadow': 'inset 0 20px 8px #fff',
-				'text-shadow': '0 1px 0 #fff, 0 -0.5px 0 #222',
-				'font-size': '1.3em',
-				'position': 'relative',
-				'color': '#666',
-				'text-decoration': 'none'
-		});
+		// Tab navigation hover
 		$('#fgcol-nav a').hover(
 			function(){
 				$(this).css({
@@ -140,24 +79,10 @@ jQuery(document).ready(
 					}
 				}
 		);
-		$('.curnav').css({
-			'background-color': '#F1F0ED',
-				'z-index': '9'
-		});
-		$('#fgcol-tab').css({
-			'position': 'relative',
-				'box-shadow': '0 0 10px #bbb',
-				'margin-top': '0',
-				'z-index': '5'
-		});
-		$('#fgcol-tab > div').css({ 
-			'position': 'absolute',
-				'display': 'none',
-				'width': '95%'
-		});
-		$('.curtab').css({ 'display': 'block' });
+		// Dynamically set tab height
 		$('#fgcol-tab').height( $('.curtab' ).css('height') );
 		//the end of style
+		// Action when click on tab nav link
 		$('#fgcol-nav > li > a').click( 
 			function() {
 				var tardiv = $(this).attr('href');
@@ -180,6 +105,7 @@ jQuery(document).ready(
 		);
 		// The end of handling mg-col
 		var $j = jQuery.noConflict();
+		// Set cycle plugin arguments
 		$j(document).ready(function () {
 			$j('#slides').cycle({
 				fx: '<?php echo pagelines('feffect') ? pagelines('feffect') : 'fade';?>',                        
