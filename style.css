@@ -386,7 +386,7 @@ ul.fg-menu li:active {
 	width: 100%;
 }
 #newmsg_time {
-	width: 6em;
+	width: 7em;
 }
 #newmsg_time_more {
 	text-align: right;
@@ -405,7 +405,7 @@ ul#fgcol-nav a {
 	-moz-border-right-colors: none;
 	-moz-border-top-colors: none;
 	background-color: transparent;
-	border-color: #DDDDDD #DDDDDD -moz-use-text-color;
+	border-color: #DDDDDD #DDDDDD;
 	border-image: none;
 	border-radius: 5px 5px 0 0;
 	border-style: solid solid none;
