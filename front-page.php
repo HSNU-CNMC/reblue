@@ -267,9 +267,9 @@ foreach ( $fboxes as $fbox ) {
 	foreach ( get_newmsg($fbox['bt_amount'], $fbox['bt_category'], true) as $msg ) {
 		if ( $msg->sticky ) {
 			$user = get_user_by('login', $msg->msg_owner);
-			echo '<tr><td>'.$user->display_name.'</td><td><a href="bulletin/?msg='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
+			echo '<tr><td>'.$user->display_name.'</td><td><a href="bulletin/?mid='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
 		} else {
-			echo '<tr><td>'.convert_timestamp($msg->msg_time).'</td><td><a href="bulletin/?msg='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
+			echo '<tr><td>'.convert_timestamp($msg->msg_time).'</td><td><a href="bulletin/?mid='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
 		}
 	}
 	echo '</tbody>
