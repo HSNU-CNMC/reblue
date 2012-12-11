@@ -44,31 +44,21 @@ echo json_encode(array_values($features), JSON_FORCE_OBJECT);?>;
 jQuery(document).ready(
 	function($)
 	{
-			$('<div id="slides" class="feature_hover"></div>').insertBefore('#featurenav');
-			var hoverst = 0;
-			$('#featurenav').hover(function(){ hoverst = 1;}, function(){ hoverst = 0;});
-			$('.feature_hover').mouseover(
-				function()
-				{	
-					$('#featurenav > a').stop().animate(
-					{
-						'top': '-50px',
-						'opacity':	'1'
-					}, 200
-					);
-				}
-			);
-			$('.feature_hover').mouseout(
-				function()
-				{
-						$('#featurenav > a').stop().animate(
-						{
-							'top': '-42px',
-							'opacity':	'0'
-						}, 200
-						);
-				}
-			);
+		$('<div id="slides" class="feature_hover"></div>').insertBefore('#featurenav');
+		var hoverst = 0;
+		$('#featurenav').hover(function(){ hoverst = 1;}, function(){ hoverst = 0;});
+		$('.feature_hover').mouseover(function() {	
+			$('#featurenav > a').stop().animate({
+				'top': '-50px',
+				'opacity':	'1'
+			}, 200);
+		});
+		$('.feature_hover').mouseout(function() {
+			$('#featurenav > a').stop().animate({
+				'top': '-42px',
+				'opacity':	'0'
+			}, 200);
+		});
 		for(i in slides)
 		{
 			if(slides[i].draft == "on")
@@ -283,10 +273,10 @@ foreach ( $fboxes as $fbox ) {
 		}
 	}
 	echo '</tbody>
-</table>';
-if ( ! empty($fbox['bt_more']) ) echo '<p id="newmsg_time_more"><a href="' . $fbox['bt_more'] . '">更多</a></p>';
-echo '</div>';
-$i++;
+		</table>';
+	if ( ! empty($fbox['bt_more']) ) echo '<p id="newmsg_time_more"><a href="' . $fbox['bt_more'] . '">更多</a></p>';
+	echo '</div>';
+	$i++;
 }
 ?>
 				</div>
