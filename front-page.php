@@ -255,7 +255,7 @@ foreach ( $fboxes as $fbox ) {
 			$user = get_user_by('login', $msg->msg_owner);
 			echo '<tr><td>'.$user->display_name.'</td><td><a href="bulletin/?msg='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
 		} else {
-			echo '<tr><td>'.convert_timestamp($msg->msg_time).'&nbsp;&nbsp;</td><td><a href="bulletin/?msg='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
+			echo '<tr><td>'.convert_timestamp($msg->msg_time).'</td><td><a href="bulletin/?msg='.$msg->msg_id.'">'.$msg->msg_title.'</a></td></tr>';
 		}
 	}
 	echo '</tbody>
