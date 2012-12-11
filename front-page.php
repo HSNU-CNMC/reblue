@@ -259,12 +259,12 @@ foreach ( $fboxes as $fbox ) {
 		}
 	}
 	echo '</tbody>
-</table>
-</div>';
+</table>';
+if ( ! empty($fbox['bt_more']) ) echo '<p id="newmsg_time_more"><a href="' . $fbox['bt_more'] . '">更多</a></p>';
+echo '</div>';
 $i++;
 }
 ?>
-
 				</div>
 				<noscript>
 <?php
