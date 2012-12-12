@@ -15,7 +15,7 @@ if ( ( isset($_GET['type']) && !empty($_GET['type']) ) || ( isset($_GET['st']) &
 	if ( $type == 'bt' )
 	{
 		get_header();
-		$page = (empty($_GET['page'])) ? '' : $wpdb->escape($_GET['page']); // sp = search page
+		$page = (empty($_GET['btp'])) ? '' : $wpdb->escape($_GET['btp']); // sp = search page
 		if ( !$page ) $page = 1;
 ?>
 <div class="content-box clear" >
