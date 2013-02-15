@@ -310,32 +310,33 @@ ul.fg-menu li:active {
 }
 /* Featured
  * ========================================== */
-#slides {
-	height: 390px;
+.meteor-caption {
+	height: 358px;
+	width: 250px;
 }
-#slides > div {
+.meteor-caption > div {
 	position: absolute;
 }
-#slides a:link,
-#slides a:visited {
+.meteor-caption a:link,
+.meteor-caption a:visited {
 	text-decoration: none;
 	color: #A0BFF2;
 }
-#slides a:hover,
-#slides a:active {
+.meteor-caption a:hover,
+.meteor-caption a:active {
 	text-decoration: underline;
 	color: #A0BFF2;
 }
-.fg-fs {
+.meteor-caption {
 	background-color: #000;
-	background-color: rgba(0, 0, 0, 0.5);
-	-ms-filter:alpha(opacity=50);
-	filter:alpha(opacity=50);
+	background-color: rgba(0, 0, 0, 0.8);
+	-ms-filter:alpha(opacity=80);
+	filter:alpha(opacity=80);
 	color: #fff;
 	position: absolute;
-	z-index: 2;
 	top: 0px;
 	padding: 15px;
+	line-height: 1.4;
 }
 /* Message-Column
  * ========================================== */
