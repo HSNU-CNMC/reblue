@@ -5,7 +5,7 @@
 <title><?php
 global $page, $paged;
 wp_title( '|', true, 'right' );
-bloginfo('name');
+bloginfo('name'); 
 $site_description = get_bloginfo( 'description', 'display' );
 if ( $site_description && ( is_home() || is_front_page() ) )
 	echo " | $site_description";
@@ -56,15 +56,12 @@ jQuery(document).ready(
 					'opacity':	'0'
 			}, 200);
 		});
-		$('#slides').append("<div id='fg-fs0'><iframe width='690' height='388' style='margin-left: 280px;' src='https://www.youtube-nocookie.com/embed/brxwsak0Bto?list=PLC_IyYw6cctDsBAF2bSnVYYdt6cmPwRGd' frameborder='0' allowfullscreen></iframe><div class='fg-fs' style='height: 358px; width: 250px;'>			<h2>師大附中美術班1317<br/><br/>期末微電影<br/><br/>EYAS</h2>			</div>			</div>");
-		$('#slides iframe').load();
 		for(i in slides)
 		{
 			if(slides[i].draft == "on")
 				continue;
-			i = parseInt(i);
-			var sid = "fg-fs" + parseInt(i+1);
-			$('#slides').append("<div id='fg-fs" + parseInt(i+1) + "'><img width='970' src='" + slides[i].image + "'/></div>");
+			var sid = "fg-fs" + i;
+			$('#slides').append("<div id='fg-fs" + i + "'><img width='970' src='" + slides[i].image + "'/></div>");
 			if(slides[i].textboxwidth != "")
 			{
 				//chrome cause some problem with getting height
@@ -97,7 +94,7 @@ jQuery(document).ready(
 		$('#fgcol-tab').height( $('.curtab' ).css('height') );
 		//the end of style
 		// Action when click on tab nav link
-		$('#fgcol-nav > li > a').click(
+		$('#fgcol-nav > li > a').click( 
 			function() {
 				var tardiv = $(this).attr('href');
 
@@ -182,7 +179,7 @@ jQuery(document).ready(
 		<![endif]-->
 <noscript>
 	<style type="text/css">
-.menu li:hover > ul,
+.menu li:hover > ul, 
 .menu li > ul:hover {
 	display: block;
 }
@@ -200,11 +197,11 @@ jQuery(document).ready(
 <script type="text/javascript">
 /* <![CDATA[ */
 jQuery(function(){
-	jQuery("ul.menu").superfish({
+	jQuery("ul.menu").superfish({ 
 		delay:       3000,
 			speed:       250,
-			autoArrows:  false,
-			dropShadows: false
+			autoArrows:  false,                           
+			dropShadows: false 
 	}); });
 	</script>
 	</div><!--header-->
