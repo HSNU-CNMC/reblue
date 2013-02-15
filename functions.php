@@ -10,20 +10,20 @@ include_once('config/admin_functions.php');
 include_once('config/option_templates.php');
 
 function dimox_breadcrumbs() {
- 
+
   $delimiter = '&raquo;';
   $name = '首頁'; //text for the 'Home' link
   $currentBefore = '<h2 class="current">';
   $currentAfter = '</h2>';
- 
+
   if ( !is_home() && !is_front_page() || is_paged() ) {
- 
+
     echo '<div id="crumbs">';
- 
+
     global $post;
     $home = get_bloginfo('url');
     //echo '<a href="' . $home . '">' . $name . '</a> ' . $delimiter . ' ';
- 
+
     if ( is_category() ) {
       global $wp_query;
       $cat_obj = $wp_query->get_queried_object();
@@ -34,26 +34,26 @@ function dimox_breadcrumbs() {
       echo $currentBefore . 'Archive by category &#39;';
       single_cat_title();
       echo '&#39;' . $currentAfter;
- 
+
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
       echo $currentBefore . get_the_time('d') . $currentAfter;
- 
+
     } elseif ( is_month() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo $currentBefore . get_the_time('F') . $currentAfter;
- 
+
     } elseif ( is_year() ) {
       echo $currentBefore . get_the_time('Y') . $currentAfter;
- 
+
     } elseif ( is_single() && !is_attachment() ) {
       $cat = get_the_category(); $cat = $cat[0];
       echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
       echo $currentBefore;
       the_title();
       echo $currentAfter;
- 
+
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
@@ -62,12 +62,12 @@ function dimox_breadcrumbs() {
       echo $currentBefore;
       the_title();
       echo $currentAfter;
- 
+
     } elseif ( is_page() && !$post->post_parent ) {
       echo $currentBefore;
       the_title();
       echo $currentAfter;
- 
+
     } elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;
       $breadcrumbs = array();
@@ -81,32 +81,32 @@ function dimox_breadcrumbs() {
       echo $currentBefore;
       the_title();
       echo $currentAfter;
- 
+
     } elseif ( is_search() ) {
       echo $currentBefore . 'Search results for &#39;' . get_search_query() . '&#39;' . $currentAfter;
- 
+
     } elseif ( is_tag() ) {
       echo $currentBefore . 'Posts tagged &#39;';
       single_tag_title();
       echo '&#39;' . $currentAfter;
- 
+
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
       echo $currentBefore . 'Articles posted by ' . $userdata->display_name . $currentAfter;
- 
+
     } elseif ( is_404() ) {
       echo $currentBefore . 'Error 404' . $currentAfter;
     }
- 
+
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
       echo __('Page') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
- 
+
     echo '</div>';
- 
+
   }
 }
 
@@ -147,7 +147,34 @@ function set_excerpt_more($more) {
 add_filter('excerpt_more', 'set_excerpt_more');
 
 /*
- * Pagelines Code
+ * ==OptionTree
+ */
+
+/**
+ * Optional: set 'ot_show_pages' filter to false.
+ * This will hide the settings & documentation pages.
+ */
+add_filter( 'ot_show_pages', '__return_false' );
+
+/**
+ * Optional: set 'ot_show_new_layout' filter to false.
+ * This will hide the "New Layout" section on the Theme Options page.
+ */
+add_filter( 'ot_show_new_layout', '__return_false' );
+
+/**
+ * Required: set 'ot_theme_mode' filter to true.
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+
+/**
+ * Required: include OptionTree.
+ */
+include_once( 'option-tree/ot-loader.php' );
+include_once( 'includes/theme-options.php' );
+
+/*
+ * ==Pagelines Code
  */
 function checkauthority()
 {
