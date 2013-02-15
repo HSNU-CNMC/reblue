@@ -337,36 +337,6 @@ ul.fg-menu li:active {
 	top: 0px;
 	padding: 15px;
 }
-/* Featured-pager
- * ===================== */
-#featurenav {
-	padding: 15px;
-	float: left;
-}
-#featurenav a {
-	-moz-border-radius:			3px;
-	-khtml-border-radius:		3px;
-	-webkit-border-radius:	3px;
-	border-radius:					3px;
-	background: none repeat scroll 0 0 #999;
-	color: #fff;
-	font-family: Arial;
-	font-size: 12px;
-	margin-right: 7px;
-	padding: 4px 8px;
-	z-index: 999;
-	position: relative;
-	top: -40px;
-	opacity: 0;	
-}
-#featurenav a:hover {
-	text-decoration: none;
-	background-color: #679fd2;
-}
-#featurenav a.activeSlide {
-	background: none repeat scroll 0 0 #d3d3d3;
-	color: #fff;
-}
 /* Message-Column
  * ========================================== */
 .mg-col {

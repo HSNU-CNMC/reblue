@@ -33,6 +33,19 @@ body {
 jQuery(document).ready(
 	function($)
 	{
+		$('#meteor-buttons').hover(function(){ hoverst = 1;}, function(){ hoverst = 0;});
+		$('.meteor-clip,#meteor-buttons').mouseover(function() {
+			$('#meteor-buttons').stop().animate({
+				'bottom': '-365px',
+				'opacity':	'1'
+			}, 200);
+		});
+		$('.meteor-clip,#meteor-buttons').mouseout(function() {
+			$('#meteor-buttons').stop().animate({
+				'bottom': '-372px',
+				'opacity':	'0'
+			}, 200);
+		});
 		// Tab navigation hover
 		$('#fgcol-nav a').hover(
 			function(){
